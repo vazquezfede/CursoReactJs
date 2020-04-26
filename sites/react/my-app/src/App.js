@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Login from './Login'
+import Registro from './Registro'
+
 
 function App() {
+  let titulo = "React app"
+  let nombre = "Test"
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +21,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React dsaadasd
+          <Login title={titulo} />
+          <Registro title={titulo} nombre={nombre} />
         </a>
       </header>
     </div>
