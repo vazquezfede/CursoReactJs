@@ -1,30 +1,34 @@
-import React from 'react';
-//import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
+//import Login from './Login'
 import Registro from './Registro';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        
-      <Registro/>
-      </header>
-      
-    </div>
-  );
-}
+class App extends Component{
+  constructor(){
+      super()
+      this.state = {
+          titulo:"React app"
+      }
 
+      this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick(){
+      
+      this.setState({
+          titulo:"Amigo Agregado!"
+      })
+  }
+  render(){
+      return (
+          <div className="App">
+          <header className="App-header">
+
+          <Registro title={this.state.titulo} modificar={this.handleClick}/>
+           {/* <Login title={this.state.titulo} modificar={this.handleClick} /> */}
+
+          </header>
+          </div>
+      );
+  }
+}
 export default App;
